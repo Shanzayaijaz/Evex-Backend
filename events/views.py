@@ -18,6 +18,18 @@ from .models import *
 from .serializers import *
 from .utils import send_notification, promote_from_waitlist, get_user_profile
 
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def health_check(request):
+    """
+    Health check endpoint for Render
+    """
+    return JsonResponse({
+        'status': 'healthy',
+        'service': 'Evex Events Backend',
+        'frontend': 'https://evex-frontend-h44f.vercel.app',
+        'timestamp': timezone.now().isoformat()
+    })
 # Move IsOrganizerOrAdmin to the top, before any functions that use it
 class IsOrganizerOrAdmin(permissions.BasePermission):
     def has_permission(self, request, view):
