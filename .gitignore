@@ -1,0 +1,64 @@
+# Navigate to your backend folder
+cd backend
+
+# Create .gitignore file
+cat > .gitignore << 'EOF'
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Django
+*.log
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+
+# Node 
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Environment variables - CRITICAL!
+.env
+.env.local
+.env.production
+.env.development
+
+# Local database
+*.sqlite3
+
+# Render specific
+render.yaml
+
+# Test files
+test*.py
+verify_*.py
+check_*.py
+reproduce_*.py
+EOF
