@@ -23,6 +23,7 @@ urlpatterns = [
     path('', include(router.urls)),
     path('register/', views.register_user, name='register'),
     path('analytics/', views.event_analytics, name='analytics'),
+    path('health/', views.health_check, name='health_check'),
     path('student/overview/', views.student_dashboard_overview, name='student-dashboard-overview'),
     path('organizer/dashboard/', views.organizer_dashboard, name='organizer-dashboard'),
     path('organizer/analytics/', views.organizer_analytics, name='organizer-analytics'),
